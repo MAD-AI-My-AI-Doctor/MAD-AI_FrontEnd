@@ -1,11 +1,12 @@
 import React from 'react';
 import '../button/ButtonStyle.css';
+import { Link } from 'react-router';
 
-const Button = ({ button }) => {
+const Button = ({ button, navigate }) => {
   return (
     <div>
       <section>
-        <button className='first-button'>{button}</button>
+        <Link to={navigate} className='first-button'>{button}</Link>
       </section>
     </div>
   )
