@@ -138,7 +138,7 @@ const Home = () => {
                   <i class="ri-smartphone-line"></i>1122-1122
                 </p>
                 <p>
-                  <i class="ri-mail-line"></i>my-ai-doctor@mad.com
+                  <i class="ri-mail-line"></i>my-ai-doctor@msd.com
                 </p>
                 <div className="footer-button-div">
                   <button className="call-button">Call</button>
