@@ -1,20 +1,25 @@
 import React from 'react';
 import './DataCardsStyle.css';
+import { Link } from 'react-router';
 
-const DataCards = () => {
+const DataCards = ({blog}) => {
+  const limitText = (text, limit = 100) => {
+  return text.length > limit ? text.slice(0, limit) + '...' : text;
+};
+
   return (
     <div>
 
       <section>
         <div className='mainer-div'>
           <div className='carder-div'>
-            <img id='ones-image' src={'/download.jpg'} />
-            <p id='lorem'>Lorem ipsum dolor sit amet consectetur  </p>
-            <button id='button-read'>Read More</button>
-            <a href='#' id='anchor-tag'>Tag will be here Another tag wil be here Another tag one more tag here tag another one more tag here</a>
+            <img id='ones-image' className='card-image'  src={blog.image} />
+            <p id='lorem'>{limitText(blog.title,50)}  </p>
+            <Link to={`/blog/${blog.id}`} id='button-read'>Read More</Link>
+            <p id='anchor-tag'> {limitText(blog.description, 100)}</p>
             <div className='views-date'>
-              <p>41 Views</p>
-              <p>December 10, 2025</p>
+              <p>{blog.views} Views</p>
+              <p>{blog.publishDate}</p>
             </div>
           </div>
         </div>

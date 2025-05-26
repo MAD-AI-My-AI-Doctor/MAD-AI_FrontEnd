@@ -110,10 +110,12 @@
 }
 
 #ones-image {
- height: fit-content;
- width: 100%;
- border-top-right-radius: 15px;
- border-top-left-radius: 15px;
+
+  width: 100%;           /* or fixed like 300px */
+  height: 200px;         /* Set desired height */
+  object-fit: cover;     /* Keeps image proportion while filling the box */
+  border-radius: 8px;    /* Optional for rounded corners */
+
 }
 
 .mainer-div {
@@ -125,3 +127,5 @@
  padding-right: 10px;
  justify-content: center;
 }
+
+

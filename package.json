@@ -5,11 +5,12 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.1",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "bcryptjs": "^3.0.2",
+    "json-server": "^1.0.0-beta.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router": "^7.5.3",
     "react-router-dom": "^7.5.3",
@@ -28,6 +29,19 @@
       "react-app/jest"
     ]
   },
+
+  
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,5 +53,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "axios": "^1.9.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^26.1.0",
+    "jsdom-global": "^3.0.2",
+    "text-encoding": "^0.7.0"
   }
 }
