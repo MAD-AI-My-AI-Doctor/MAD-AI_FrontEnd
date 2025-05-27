@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import SymptomChecker from './SymptomChecker';
+import { MemoryRouter } from 'react-router';
 
 // Simple mock for axios (no need for jest.mock in CRA)
 jest.mock('axios', () => ({
@@ -37,7 +38,11 @@ describe('SymptomChecker', () => {
   });
 
   test('submits form successfully', async () => {
-    render(<SymptomChecker />);
+  render(
+    <MemoryRouter>
+      <SymptomChecker />
+    </MemoryRouter>
+  );
     
     fireEvent.change(screen.getByLabelText(/patient name/i), {
       target: { value: 'John' }

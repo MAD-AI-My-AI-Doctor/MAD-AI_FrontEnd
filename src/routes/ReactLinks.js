@@ -9,5 +9,6 @@ export const ROUTE= {
  SymptomChecker: '/symptomChecker',
  MedicalHistory: 'admin/medicalHistory',
  DoctorSearch: '/doctorSearch',
+ Profile: '/profile',
  
 }

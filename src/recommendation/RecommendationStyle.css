@@ -55,8 +55,7 @@
  display: flex;
  justify-content: space-between;
  flex-direction: row;
- align-items: center;
- width: 40vw;
+ width: 80vw;
 }
 
 .form-group label {
@@ -66,11 +65,7 @@
 
 .form-group input,
 .form-group textarea {
- width: 100%;
- padding-left: 8px;
- padding-right: 150px;
- padding-top: 8px;
- padding-bottom: 8px;
+ width: 100% !important;
  border: 1px solid black;
  border-radius: 4px;
  box-sizing: border-box;
@@ -84,12 +79,16 @@
  width: 30vw;
 }
 
-#add-button {
+.add-button {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ cursor: pointer;
  background-color: #08866e;
  color: white;
  border: none;
- padding: 10px 20px;
- border-radius: 4px;
+ padding: 10px 10px;
+ border-radius: 5px;
  cursor: pointer;
  font-size: 16px;
 }

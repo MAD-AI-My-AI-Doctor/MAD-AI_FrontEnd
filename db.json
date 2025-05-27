@@ -1,42 +1,67 @@
 {
-  "blogs":[
-  {
-    "id": 1,
-    "title": "Understanding Your Symptoms: How Our AI Symptom Checker Can Help",
-    "description": "Feeling unwell but not sure what's wrong? Learn how our intelligent AI symptom checker analyzes your symptoms to provide potential insights and guide you on your next steps towards getting the right medical attention.",
-    "tags": ["AI Symptom Checker", "Health Tech", "Early Diagnosis", "Medical AI", "Understanding Symptoms"],
-    "views": 125,
-    "publishDate": "2025-06-15",
-    "image": "Red Headache Symptoms Instagram Post.png"
-  },
-  {
-    "id": 2,
-    "title": "Navigating Common Cold vs. Flu: A Guide Using Our AI Disease Information",
-    "description": "Is it just a common cold or something more serious like the flu? This post breaks down the differentiating symptoms and explains how our AI-powered disease information can help you understand the nuances and when to seek professional advice.",
-    "tags": ["Common Cold", "Influenza", "Symptom Difference", "AI Health Assistant", "Disease Information"],
-    "views": 210,
-    "publishDate": "2025-06-22",
-    "image": "Green Illustrative Cough and Sneezes Spread Diseases School Poster.png"
-  },
-  {
-    "id": 3,
-    "title": "The Future of Finding a Doctor: AI-Powered Doctor Matching",
-    "description": "Tired of endless searches for the right doctor? Discover how our AI algorithm helps you find doctors based on your specific needs, symptoms, and our comprehensive disease database, making healthcare more accessible and personalized.",
-    "tags": ["Find a Doctor", "AI Healthcare", "Personalized Medicine", "Doctor Match", "Health Technology"],
-    "views": 180,
-    "publishDate": "2025-07-01",
-    "image": "blue find doctor modern instagram post.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Understanding Migraines: Causes, Symptoms, and When to Consult a Doctor",
-    "description": "Migraines are more than just headaches. This blog post delves into the common causes, varying symptoms of migraines, and how our AI symptom checker can assist in identifying potential triggers, while also emphasizing when it's crucial to consult a healthcare professional for diagnosis and treatment.",
-    "tags": ["Migraine", "Headache", "Neurology", "Symptom Analysis", "Doctor Consultation", "Disease Deep Dive"],
-    "views": 155,
-    "publishDate": "2025-07-10",
-    "image": "Blue Modern Online Doctor Consultation Instagram Post.jpg"
-  }
-],
+  "blogs": [
+    {
+      "id": "1",
+      "title": "Understanding Your Symptoms: How Our AI Symptom Checker Can Help",
+      "description": "Feeling unwell but not sure what's wrong? Learn how our intelligent AI symptom checker analyzes your symptoms to provide potential insights and guide you on your next steps towards getting the right medical attention.",
+      "tags": [
+        "AI Symptom Checker",
+        "Health Tech",
+        "Early Diagnosis",
+        "Medical AI",
+        "Understanding Symptoms"
+      ],
+      "views": 125,
+      "publishDate": "2025-06-15",
+      "image": "Red Headache Symptoms Instagram Post.png"
+    },
+    {
+      "id": "2",
+      "title": "Navigating Common Cold vs. Flu: A Guide Using Our AI Disease Information",
+      "description": "Is it just a common cold or something more serious like the flu? This post breaks down the differentiating symptoms and explains how our AI-powered disease information can help you understand the nuances and when to seek professional advice.",
+      "tags": [
+        "Common Cold",
+        "Influenza",
+        "Symptom Difference",
+        "AI Health Assistant",
+        "Disease Information"
+      ],
+      "views": 210,
+      "publishDate": "2025-06-22",
+      "image": "Green Illustrative Cough and Sneezes Spread Diseases School Poster.png"
+    },
+    {
+      "id": "3",
+      "title": "The Future of Finding a Doctor: AI-Powered Doctor Matching",
+      "description": "Tired of endless searches for the right doctor? Discover how our AI algorithm helps you find doctors based on your specific needs, symptoms, and our comprehensive disease database, making healthcare more accessible and personalized.",
+      "tags": [
+        "Find a Doctor",
+        "AI Healthcare",
+        "Personalized Medicine",
+        "Doctor Match",
+        "Health Technology"
+      ],
+      "views": 180,
+      "publishDate": "2025-07-01",
+      "image": "blue find doctor modern instagram post.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Understanding Migraines: Causes, Symptoms, and When to Consult a Doctor",
+      "description": "Migraines are more than just headaches. This blog post delves into the common causes, varying symptoms of migraines, and how our AI symptom checker can assist in identifying potential triggers, while also emphasizing when it's crucial to consult a healthcare professional for diagnosis and treatment.",
+      "tags": [
+        "Migraine",
+        "Headache",
+        "Neurology",
+        "Symptom Analysis",
+        "Doctor Consultation",
+        "Disease Deep Dive"
+      ],
+      "views": 155,
+      "publishDate": "2025-07-10",
+      "image": "Blue Modern Online Doctor Consultation Instagram Post.jpg"
+    }
+  ],
   "recommendation": [
     {
       "name": "OLCEA - Øjenlægernes Center Aarhus",
@@ -48,7 +73,8 @@
       "placeId": "ChIJlSeyaGVTEYRGHsMCeQP62A",
       "phoneNumber": "32 22 33 34",
       "website": "http://olcea.dk/",
-      "rating": 4.7
+      "rating": 4.7,
+      "id": "8675"
     },
     {
       "name": "Dr. Smith",
@@ -60,7 +86,8 @@
       "website": "http://drsmith.com",
       "rating": 4.5,
       "specialty": "neurology",
-      "location": "Copenhagen"
+      "location": "Copenhagen",
+      "id": "0c2d"
     },
     {
       "name": "Øjenklinikken Aros - Grå stær & Zeiss multifokal linseoperation.",
@@ -72,7 +99,8 @@
       "placeId": "ChIJzyHq1M_TEYRPqFFe61kUAE",
       "phoneNumber": "86 12 37 60",
       "website": "http://www.arosklinik.dk/",
-      "rating": 3.5
+      "rating": 3.5,
+      "id": "5ef1"
     },
     {
       "name": "Mindelegat For Øjenlæge Hans Jørgen Jensen & Hustru Ebba Jensen",
@@ -84,7 +112,8 @@
       "placeId": "ChIJrJRVBLzc_TEYRj5JQQHSzx00",
       "phoneNumber": null,
       "website": null,
-      "rating": null
+      "rating": null,
+      "id": "dd44"
     }
   ],
   "find_doctor": [
@@ -98,7 +127,8 @@
       "placeId": "ChIJlSeyaGVTEYRGHsMCeQP62A",
       "phoneNumber": "32 22 33 34",
       "website": "http://olcea.dk/",
-      "rating": 4.7
+      "rating": 4.7,
+      "id": "5dd5"
     },
     {
       "name": "Dr. Smith",
@@ -110,7 +140,8 @@
       "website": "http://drsmith.com",
       "rating": 4.5,
       "disease": "Eye",
-      "location": "Copenhagen"
+      "location": "Copenhagen",
+      "id": "f3d6"
     },
     {
       "name": "Øjenklinikken Aros - Grå stær & Zeiss multifokal linseoperation.",
@@ -122,7 +153,8 @@
       "placeId": "ChIJzyHq1M_TEYRPqFFe61kUAE",
       "phoneNumber": "86 12 37 60",
       "website": "http://www.arosklinik.dk/",
-      "rating": 3.5
+      "rating": 3.5,
+      "id": "1ed2"
     },
     {
       "name": "Mindelegat For Øjenlæge Hans Jørgen Jensen & Hustru Ebba Jensen",
@@ -134,7 +166,8 @@
       "placeId": "ChIJrJRVBLzc_TEYRj5JQQHSzx00",
       "phoneNumber": null,
       "website": null,
-      "rating": null
+      "rating": null,
+      "id": "6c59"
     }
   ],
   "comments": [
@@ -158,11 +191,18 @@
       "password": "MTIzNA=="
     },
     {
-      "id": "b99e",
-      "fname": "abubakar",
-      "lname": "islam",
+      "fname": "abubakar12",
+      "lname": "islam34",
       "email": "abu6759463@gmail.com",
-      "password": "VGVzdDEyMzQ="
+      "password": "VGVzdDEyMzQ=",
+      "id": "b99e"
+    },
+    {
+      "id": "a81f",
+      "fname": "Hanzla",
+      "lname": "khan",
+      "email": "hanzla7658@gmail.com",
+      "password": "MTIzNA=="
     }
   ],
   "medical_history": [
@@ -183,8 +223,16 @@
       "fileName": "AI Comic Factory - a Hugging Face Space by jbilcke-hf.pdf",
       "createdAt": "2025-05-24T15:44:14.215Z"
     }
-   
-   
+  ],
+  "medical_report": [
+    {
+      "id": "3929",
+      "userId": "3066",
+      "title": "sfsfsdfsdf",
+      "description": "fsdsdfsdf",
+      "fileName": "AI Comic Factory - a Hugging Face Space by jbilcke-hf.pdf",
+      "createdAt": "2025-05-24T15:44:14.215Z"
+    }
   ],
   "symptoms": [
     {
@@ -215,7 +263,7 @@
   ],
   "results": [
     {
-      "id": 1748094207284,
+      "id": "1748094207284",
       "enteredSymptoms": "redness, water in eyes",
       "possibleConditions": [
         "Common Cold",
@@ -226,7 +274,7 @@
       "date": "5/24/2025, 6:43:27 PM"
     },
     {
-      "id": 1748095794885,
+      "id": "1748095794885",
       "patientName": "asdas",
       "enteredSymptoms": "water in eyes, irritation in eyes",
       "possibleConditions": [
@@ -250,7 +298,7 @@
       "date": "5/24/2025, 7:09:54 PM"
     },
     {
-      "id": 1748102155753,
+      "id": "1748102155753",
       "patientName": "umer ",
       "enteredSymptoms": "irritation in eyes, water in eyes",
       "possibleConditions": [
@@ -274,7 +322,7 @@
       "date": "5/24/2025, 8:55:55 PM"
     },
     {
-      "id": 1748104754901,
+      "id": "1748104754901",
       "patientName": "abubakr",
       "enteredSymptoms": "eyes infection, water in eyes",
       "possibleConditions": [

@@ -50,14 +50,14 @@ header {
  align-items: center;
 }
 
-.nav-bar ul li a {
+.nav-bar ul li {
  display: block;
  color: #fefefe;
  font-size: 15px;
  transition: 0.2s ease;
 }
 
-.nav-bar ul li a:hover {
+.nav-bar ul li:hover {
  color: #e6e4e4;
 }
 
@@ -159,7 +159,7 @@ header {
  transition: 0.2s ease;
 }
 
-.loginars {
+/* .loginars {
   padding: 8px 50px;
   border-radius: 15px;
   background-color: #00866e;
@@ -180,7 +180,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
+} */
 
 .new-main-div {
   display: flex;

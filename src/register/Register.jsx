@@ -14,12 +14,12 @@ const Register = () => {
   const navigate = useNavigate();
 
 
-useEffect(() => {
-  const user = localStorage.getItem(Config.userApiTokenName);
-  if (user) {
-    navigate('/'); // Redirect to home if user is already logged in
-  }
-}, []);
+  useEffect(() => {
+    const user = localStorage.getItem(Config.userApiTokenName);
+    if (user) {
+      navigate('/'); // Redirect to home if user is already logged in
+    }
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,7 +40,7 @@ useEffect(() => {
       // Encrypt password
       // const salt = bcrypt.genSaltSync(10);
       // const hashedPassword = bcrypt.hashSync(passwords, salt);
-const encodedPassword = btoa(passwords); 
+      const encodedPassword = btoa(passwords);
       // Save to db.json
       const newUser = {
         fname,
@@ -72,19 +72,17 @@ const encodedPassword = btoa(passwords);
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <section>
         <div className='main-first-div'>
           <div className='main-div'>
             <NavLink id='back' to="/">{"< Back"}</NavLink>
-            <div className='inputer-div'>
+            <div className='inputers-div'>
               <div className='login-register'>
                 <NavLink className="logina" to={ROUTE.Login}>Login</NavLink>
-                <NavLink className="logina" to={ROUTE.Register}>Register</NavLink>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className='register-user'>
-                 
 
                   <div className='responsive-input'>
                     <label>First Name<br />
@@ -107,7 +105,7 @@ const encodedPassword = btoa(passwords);
 
                   <div className='buttoner-div'>
                     <button type='submit' id='sign'>Register</button>
-                    <a href="#">Forgot Password?</a>
+                    {/* <a href="#">Forgot Password?</a> */}
                   </div>
 
                 </div>

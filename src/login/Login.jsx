@@ -92,13 +92,13 @@ useEffect(() => {
                   </div>
                   <div className='buttoner-div'>
                     <button id='sign' type='submit'>Sign In</button>
-                    <a href="#">Forgot Password?</a>
+                    <a className='forgot-a-password' href="#">Forgot Password?</a>
                   </div>
                 </div>
               </form>
             </div>
             <figure className='mobile grid sm:order-2 order-1'>
-              <img id='image-mobile' src={'./mobile.png'} alt="" />
+              <img id='image-mobile' src={'./doctors.png'} alt="" />
             </figure>
           </div>
         </div>

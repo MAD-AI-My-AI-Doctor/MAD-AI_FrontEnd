@@ -13,6 +13,7 @@ import SymptomChecker from '../symptomChecker/SymptomChecker';
 import MedicalHistory from '../medicalHistory/MedicalHistory';
 import DoctorSearch from '../doctorSearch/DoctorSearch';
 import BlogDetail from '../blog-detail/BlogDetail';
+import Profile from '../profile/Profile';
 
 const ReactRoute = () => {
   return (
@@ -32,6 +33,7 @@ const ReactRoute = () => {
        <Route path={ROUTE.SymptomChecker} element={<SymptomChecker/>}/>
        <Route path={ROUTE.MedicalHistory} element={<MedicalHistory/>}/>
        <Route path={ROUTE.DoctorSearch} element={<DoctorSearch/>}/>
+       <Route path={ROUTE.Profile} element={<Profile/>}/>
       </Routes>
       </BrowserRouter>
     </div>

@@ -23,11 +23,6 @@
  background-color: #ddeae3;
 }
 
-a {
- color: #00866e;
- padding-left: 30px;
-}
-
 .login-register {
  display: flex;
  margin-top: 10vh;
@@ -78,12 +73,12 @@ a {
  color: black;
 }
 
-.inputer-div {
+.inputers-div {
  display: flex;
  flex-direction: column;
  align-items: center;
  gap: 15px;
- margin-top: 2vh;
+ margin-top: 10vh;
  background-color: #ddeae3;
 }
 
@@ -91,37 +86,33 @@ a {
  color: #00866e;
 }
 
-.span-inpuut {
- display: flex;
- justify-content: center;
- flex-direction: column;
- gap: 10px;
-}
-
 #sign {
  padding: 10px 35px;
  background-color: #00866e;
  color: #fff;
  border-radius: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
 }
 
 .buttoner-div {
  display: flex;
  flex-direction: row;
  align-items: center;
- gap: 5px;
-}
-
-.register-user {
-
- justify-content: center;
- align-items: center;
- flex-direction: row;
- gap: 20px;
 }
 
 .logo {
  height: 5vh;
+}
+
+.register-user {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ gap: 2px;
 }
 
 @media screen and (max-width: 1024px) {

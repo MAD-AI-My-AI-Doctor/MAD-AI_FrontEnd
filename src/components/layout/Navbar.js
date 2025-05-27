@@ -4,10 +4,11 @@ import { Link, useNavigate } from 'react-router'
 import { ROUTE } from '../../routes/ReactLinks';
 import { MdLogout } from 'react-icons/md';
 import { Config } from '../../constant';
+import './NavbarStyle.css';
 
 const Navbar = () => {
-const navigate=useNavigate();
-     useEffect(() => {
+  const navigate = useNavigate();
+  useEffect(() => {
     const hamburger = document.querySelector(".hamburger");
     const navBar = document.querySelector(".nav-bar");
 
@@ -18,20 +19,20 @@ const navigate=useNavigate();
     }
   }, []);
 
-    const handleLogOut = () => {
-    
-      const user = localStorage.removeItem(Config.userApiTokenName);
-    
-        navigate('/'); // Redirect to home if user is already logged in
+  const handleLogOut = () => {
 
-    
-    };
-  
-    const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef(null);
-  
-    useClickOutside(dropdownRef, () => setIsOpen(false));
-function useClickOutside(ref, callback) {
+    const user = localStorage.removeItem(Config.userApiTokenName);
+
+    navigate('/'); // Redirect to home if user is already logged in
+
+
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useClickOutside(dropdownRef, () => setIsOpen(false));
+  function useClickOutside(ref, callback) {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
@@ -46,121 +47,126 @@ function useClickOutside(ref, callback) {
   }
   return (
     <section>
-          <header>
-            <div className="main-navbars-div">
-              <div className="logo">
-                <img id="logoOne" src={"/logoOne.png"} />
-              </div>
-              <nav className="nav-bar">
-                <ul>
-                  <li>
-                    <Link to={"/"}>Home</Link>
-                  </li>
-                  <li>
-                    <Link to={"/doctor"}>AI Doctor</Link>
-                  </li>
-                  {/* <li>
+      <header>
+        <div className="main-navbars-div">
+          <div className="logo">
+            <img id="logoOne" src={"/logoOne.png"} />
+          </div>
+          <nav className="nav-bar">
+            <ul>
+              <li>
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link to={"/doctor"}>AI Doctor</Link>
+              </li>
+              {/* <li>
                     <a href="#">Lab Test</a>
                   </li> */}
-                  <li>
-                           <Link to={"/about"}>About</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact">Contact</Link>
-                  </li>
-                </ul>
-              </nav>
-              <div className="two-icon-menu-div">
-                <nav className="navbar">
-                  <>
-                    {!localStorage.getItem(Config.userApiTokenName) ? (
-                      <Link to="/login">
-                        <button className="loginars">
-                          <LuLogIn />
-                          {" Login"}
-                        </button>
-                      </Link>
-                    ) : (
-                      <div className="navbar-right" ref={dropdownRef}>
-                        <div className="login-button-diver">
-                          <button
-                            className="login"
-                            onClick={() => setIsOpen(!isOpen)}
-                            aria-label="User menu"
-                          >
-                            <i className="ri-account-circle-line"></i>
-                          </button>
-                        </div>
+              <li>
+                <Link to={"/about"}>About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="two-icon-menu-div">
+            <nav className="navbar">
+              {!localStorage.getItem(Config.userApiTokenName) ? (
+                <Link to="/login">
+                  <icon type="submit" className="loginars">
+                    <LuLogIn />
+                    {" Login"}
+                  </icon>
+                </Link>
+              ) : (
+                <div className="navbar-right" ref={dropdownRef}>
+                  <div className="login-button-diver">
+                    <icon
+                      className="login"
+                      onClick={() => setIsOpen(!isOpen)}
+                      aria-label="User menu"
+                    >
+                      <i className="ri-account-circle-line"></i>
+                    </icon>
+                  </div>
 
-                        {isOpen && (
-                          <div className="dropdown-menu">
-                            <Link
-                              to="/symptomChecker"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <i className="ri-psychotherapy-line"></i>{" "}
-                              SymptomChecker
-                            </Link>
-                             <Link
-                              to="/recommendation"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <i className="ri-registered-line"></i>{" "}
-                              Find My Doctor
-                            </Link>
-                            <Link
-                              to="/doctorSearch"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <i className="ri-survey-line"></i> Find Best Doctor
-                            </Link>
-                            {/* <Link to="/doctor" onClick={() => setIsOpen(false)}>
+                  {isOpen && (
+                    <div className="dropdown-menu">
+                      <Link
+                        to="/profile"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <i class="ri-profile-line"></i> Profile
+                      </Link>
+                      <Link
+                        to="/symptomChecker"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <i className="ri-psychotherapy-line"></i>{" "}
+                        SymptomChecker
+                      </Link>
+                      <Link
+                        to="/recommendation"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <i className="ri-registered-line"></i>{" "}
+                        Find My Doctor
+                      </Link>
+                      <Link
+                        to="/doctorSearch"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <i className="ri-survey-line"></i> Find Best Doctor
+                      </Link>
+                      
+                      {/* <Link to="/doctor" onClick={() => setIsOpen(false)}>
                               <i className="ri-nurse-fill"></i> Add Medical History
                             </Link> */}
-                            
-                            {/* <Link
+
+                      {/* <Link
                               to="/medicalHistory"
                               onClick={() => setIsOpen(false)}
                             >
                               <i className="ri-medicine-bottle-line"></i>{" "}
                               MedicalHistory
                             </Link> */}
-                           
-                            {/* <Link to="/record" onClick={() => setIsOpen(false)}>
+
+                      {/* <Link to="/record" onClick={() => setIsOpen(false)}>
                               <i className="ri-record-mail-line icon"></i>{" "}
                               Record
                             </Link> */}
-                            <Link
-                              to={ROUTE.Login}
-                              id="loginars"
-                              onClick={handleLogOut}
-                            >
-                              <button className="loginars">
-                                <MdLogout />
-                                {" Logout"}
-                              </button>
-                            </Link>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </>
-                </nav>
-              </div>
-              {/* <div className='login-button-diver'>
+                      <Link
+                        to={ROUTE.Login}
+                        id="loginars"
+                        onClick={handleLogOut}
+                      >
+                        <icon type='submit' className="loginars">
+                          <MdLogout />
+                          {" Logout"}
+                        </icon>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
+            </nav>
+          </div>
+          {/* <div className='login-button-diver'>
           <NavLink className='login' to={ROUTE.Login}>
             <button>{true ? 'Logout' : 'Login'}</button>
           </NavLink>
-        </div> */}
-              <div className="hamburger">
-                <div className="line"></div>
-                <div className="line"></div>
-                <div className="line"></div>
-              </div>
-            </div>
-          </header>
-        </section>
+         </div> */}
+          <div className="hamburger">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+        </div>
+      </header>
+    </section>
   )
 }
 
-export default Navbar
+export default Navbar;
