@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Button from "../components/button/Button";
+import Button from "../components/Button/button";
 import Card from "../components/card/Card";
 import Cards from "../components/cards/Cards";
 import DataCards from "../components/dataCards/DataCards";

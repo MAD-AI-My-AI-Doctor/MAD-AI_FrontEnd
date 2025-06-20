@@ -4,6 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import './DoctorSearchStyle.css';
 import { Link } from 'react-router';
 import { Config } from '../constant';
+import { searchDoctors } from '../api/features/doctorSearch';
 
 function DoctorSearch() {
   const [location, setLocation] = useState('');
@@ -13,30 +14,15 @@ function DoctorSearch() {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
-    if (!location.trim() && !specialty.trim()) {
-      alert('Please enter at least one search field.');
+    if (!location.trim() || !specialty.trim()) {
+      alert('Please enter both location and specialty.');
       return;
     }
 
     setLoading(true);
     try {
-      // Fetch all doctors (no parameters)
-      
-      const response = await axios.get(`${Config.serverUrl}/find_doctor`);
-      setAllDoctors(response.data);
-
-      // Filter locally
-      const filtered = response.data.filter((doc) => {
-        const cityMatch = location.trim()
-          ? doc.city?.toLowerCase().includes(location.trim().toLowerCase())
-          : true;
-        const specialtyMatch = specialty.trim()
-          ? doc.specialty?.toLowerCase().includes(specialty.trim().toLowerCase())
-          : true;
-        return cityMatch || specialtyMatch;
-      });
-
-      setFilteredDoctors(filtered);
+      const response = await searchDoctors(location, specialty);
+      setFilteredDoctors(response.data);
     } catch (error) {
       console.error('Error fetching doctors:', error);
       alert('Failed to fetch doctors. Please try again.');

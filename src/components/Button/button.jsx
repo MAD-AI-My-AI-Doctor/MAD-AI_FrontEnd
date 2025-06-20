@@ -1,5 +1,5 @@
 import React from 'react';
-import '../button/ButtonStyle.css';
+import './ButtonStyle.css';
 import { Link } from 'react-router';
 
 const Button = ({ button, navigate }) => {

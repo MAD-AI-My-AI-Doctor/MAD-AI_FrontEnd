@@ -4,77 +4,61 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import { ROUTE } from '../routes/ReactLinks';
 import { Config } from '../constant';
 import Navbar from '../components/layout/Navbar';
+import { login } from '../api/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-useEffect(() => {
-  const user = localStorage.getItem(Config.userApiTokenName);
-  if (user) {
-    navigate('/'); // Redirect to home if user is already logged in
-  }
-}, []);
+  useEffect(() => {
+    const user = localStorage.getItem(Config.userApiTokenName);
+    if (user) {
+      navigate('/'); // Redirect to home if user is already logged in
+    }
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!email || !password) {
       alert('Please fill in all fields.');
       return;
     }
-
     try {
-      const res = await fetch(`${Config.serverUrl}/users?email=${email}`);
-      const users = await res.json();
-
-      if (users.length === 0) {
-        alert("User not found.");
-        return;
-      }
-
-      const user = users[0];
-      const decodedPassword = atob(user.password); // decode from base64
-
-      if (decodedPassword === password) {
-        localStorage.setItem(Config.userApiTokenName, JSON.stringify(user));
-        alert("Login successful!");
-        navigate('/doctor');
-      } else {
-        alert("Invalid password.");
-      }
+      const res = await login(email, password);
+      localStorage.setItem(Config.userApiTokenName, JSON.stringify(res.data));
+      alert("Login successful!");
+      navigate('/doctor');
     } catch (error) {
-      console.error("Login error:", error);
-      alert("Something went wrong.");
+      alert("Login failed.");
     }
   };
   return (
     <div>
-<Navbar/>
+      <Navbar />
       <section>
         <div className='miner-div'>
           <Link id='back' to="/">{"< Back"}</Link>
           <div className='main-div grid sm:grid-cols-2 items-center sm:grid-cols-1'>
             <div className='inputer-div  grid sm:order-2 order-1'>
               <div className='login-register'>
-              
+
                 <NavLink className="logina" to={ROUTE.Register}>
                   Register
                 </NavLink>
               </div>
               <form onSubmit={handleSubmit}>
 
-                
+
 
                 <div className='three-main-or-div'>
-                  
+
                   <div className='responsive-div' >
                     <label for="Email ID">Email ID <br />
                       <input
                         type="email"
                         id="input"
                         value={email}
-                      
+
                         onChange={(e) => setEmail(e.target.value)}
                         required
                       />
@@ -84,7 +68,7 @@ useEffect(() => {
                         type="password"
                         id="input"
                         value={password}
-                       
+
                         onChange={(e) => setPassword(e.target.value)}
                         required
                       /><br />
