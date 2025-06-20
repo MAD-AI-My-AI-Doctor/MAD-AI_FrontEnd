@@ -3,7 +3,7 @@
 // const image_base_url = process.env.REACT_APP_IMAGE_ENDPOINT
 // const file_base_url = process.env.REACT_APP_FILE_ENDPOINT
 
-const serverUrl = "http://localhost:3002";
+const serverUrl = "http://localhost:5122";
 
 
 // const serverUrl = 'http://127.0.0.1:8000/';
@@ -23,7 +23,7 @@ export const Config = {
   email: 'email',
   verificationCode: 'verifiactionCode',
 
-  userApiTokenName: 'loggedInUser',
+  userApiTokenName: 'user', 
   googleApiKey: 'AIzaSyD4BUDTEpTPIuhhJ2MyQ4AiQ0u3CyFlWOo',
 
   // Used in whole app
