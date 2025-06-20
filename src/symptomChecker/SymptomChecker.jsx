@@ -1,4 +1,166 @@
 import React, { useState } from 'react';
+import { checkSymptoms } from '../api/features';
+import './SymptomChecker.css';
+import Navbar from '../components/layout/Navbar';
+
+function SymptomChecker() {
+  const [symptoms, setSymptoms] = useState('');
+  const [patient, setPatient] = useState('');
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [history, setHistory] = useState([]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!symptoms.trim()) return alert("Please enter symptoms");
+    if (!patient.trim()) return alert("Please enter patient name");
+
+    setLoading(true);
+
+    try {
+      const response = await checkSymptoms({
+        patientName: patient,
+        symptomsText: symptoms,
+        dateSubmitted: new Date().toISOString(),
+      });
+
+      const diagnosis = response.data;
+
+      const resultObj = {
+        id: Date.now(),
+        patientName: patient,
+        enteredSymptoms: symptoms,
+        possibleConditions: diagnosis.suggestedConditions || [],
+        advice: diagnosis.summary || '',
+        urgencyLevel: diagnosis.urgencyLevel || 'N/A',
+        recommendedActions: diagnosis.nextSteps
+          ? (Array.isArray(diagnosis.nextSteps)
+              ? diagnosis.nextSteps
+              : diagnosis.nextSteps.split(','))
+          : [],
+        date: new Date().toLocaleString()
+      };
+
+      setResult(resultObj);
+      setHistory(prev => [resultObj, ...prev].slice(0, 10));
+      setSymptoms('');
+      setPatient('');
+    } catch (error) {
+      console.error("Diagnosis error:", error);
+      alert("Error getting diagnosis. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <Navbar />
+      <div className="symptom-checker-pro">
+        <div className="sc-card sc-form-card">
+          <h2>🩺 Symptom Checker</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="sc-form-group">
+              <label>Patient Name</label>
+              <input
+                type="text"
+                value={patient}
+                onChange={e => setPatient(e.target.value)}
+                placeholder="e.g. John Doe"
+                required
+              />
+            </div>
+            <div className="sc-form-group">
+              <label>Symptoms</label>
+              <textarea
+                value={symptoms}
+                onChange={e => setSymptoms(e.target.value)}
+                placeholder="Describe symptoms in detail (e.g. headache, fever for 3 days)"
+                required
+                rows={4}
+              />
+            </div>
+            <button type="submit" className="sc-btn" disabled={loading}>
+              {loading ? (
+                <>
+                  <span className="spinner"></span>
+                  Checking...
+                </>
+              ) : 'Check Symptoms'}
+            </button>
+          </form>
+        </div>
+
+        {result && (
+          <div className="sc-card sc-result-card">
+            <h2>Diagnosis Result</h2>
+            <div className="sc-result-grid">
+              <div>
+                <strong>Patient:</strong> {result.patientName}
+              </div>
+              <div>
+                <strong>Symptoms:</strong> {result.enteredSymptoms}
+              </div>
+              <div>
+                <strong>Possible Conditions:</strong>
+                <ul>
+                  {result.possibleConditions.map((c, i) => <li key={i}>{c}</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong>Urgency Level:</strong>
+                <span className={`sc-urgency sc-urgency-${result.urgencyLevel.toLowerCase()}`}>
+                  {result.urgencyLevel}
+                </span>
+              </div>
+              <div>
+                <strong>Advice:</strong>
+                <div className="sc-advice">{result.advice}</div>
+              </div>
+              <div>
+                <strong>Recommended Actions:</strong>
+                <ul>
+                  {result.recommendedActions.map((a, i) => <li key={i}>{a}</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong>Date:</strong> {result.date}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {history.length > 0 && (
+          <div className="sc-card sc-history-card">
+            <h3>History</h3>
+            <ul>
+              {history.map(item => (
+                <li key={item.id}>
+                  <span className="sc-history-date">{item.date}</span>
+                  <span className="sc-history-patient">{item.patientName}</span>
+                  <span className="sc-history-symptoms">{item.enteredSymptoms}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default SymptomChecker;
+
+
+
+
+
+
+
+
+
+/*
+import React, { useState } from 'react';
 import axios from 'axios';
 import './SymptomChecker.css';
 import { Config } from '../constant';
@@ -209,3 +371,4 @@ const storedUser = JSON.parse(localStorage.getItem(Config.userApiTokenName));
 }
 
 export default SymptomChecker;
+*/

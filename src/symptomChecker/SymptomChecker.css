@@ -96,4 +96,142 @@ textarea {
   to { transform: rotate(360deg); }
 }
 
-/* Existing urgency styles... */
+/* Updates */
+
+/* Main container */
+.symptom-checker-pro {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 1rem;
+}
+
+/* Card style */
+.sc-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  margin-bottom: 2rem;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.sc-form-card {
+  border-left: 6px solid #00866E;
+}
+
+.sc-result-card {
+  border-left: 6px solid #007BFF;
+}
+
+.sc-history-card {
+  border-left: 6px solid #f39c12;
+}
+
+/* Form group */
+.sc-form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sc-form-group input,
+.sc-form-group textarea {
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.sc-form-group input:focus,
+.sc-form-group textarea:focus {
+  border-color: #00866E;
+  outline: none;
+}
+
+.sc-btn {
+  background: #00866E;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sc-btn:disabled {
+  background: #b2dfd7;
+  cursor: not-allowed;
+}
+
+/* Result grid */
+.sc-result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+@media (min-width: 600px) {
+  .sc-result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Urgency badge */
+.sc-urgency {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2em 0.7em;
+  border-radius: 1em;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.95em;
+}
+.sc-urgency-low { background: #27ae60; }
+.sc-urgency-medium { background: #f39c12; }
+.sc-urgency-high { background: #e74c3c; }
+
+/* Advice box */
+.sc-advice {
+  background: #f6fafd;
+  border-left: 4px solid #007BFF;
+  padding: 0.7em 1em;
+  border-radius: 6px;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* History */
+.sc-history-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sc-history-card li {
+  display: flex;
+  gap: 1em;
+  padding: 0.7em 0;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 0.98em;
+}
+.sc-history-date {
+  color: #888;
+  min-width: 120px;
+  font-size: 0.93em;
+}
+.sc-history-patient {
+  font-weight: 600;
+  color: #00866E;
+}
+.sc-history-symptoms {
+  color: #333;
+  flex: 1;
+  font-style: italic;
+}
