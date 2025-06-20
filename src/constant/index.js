@@ -30,11 +30,11 @@ export const Config = {
   currency_symbol: "DKK",
   currency: "Kr.",
 
-  appName: "YakSport",
+  appName: "MAD - My AI Doctor",
 
   pushTokenName: 'device-push-token',
 
-  // Here add langues and then add transaltion file for languages
+  // Here add language and then add transaltion file for languages
   languages: [
     { shortName: 'en', icon: '', longName: 'English' },
     { shortName: 'da', icon: '', longName: 'Danish' }
