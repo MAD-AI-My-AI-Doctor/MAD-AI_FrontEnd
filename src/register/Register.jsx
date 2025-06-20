@@ -5,6 +5,7 @@ import { ROUTE } from '../routes/ReactLinks';
 import bcrypt from 'bcryptjs';
 import { Config } from '../constant';
 import Navbar from '../components/layout/Navbar';
+import { register } from '../api/auth';
 
 const Register = () => {
   const [fname, setFirstName] = useState('');

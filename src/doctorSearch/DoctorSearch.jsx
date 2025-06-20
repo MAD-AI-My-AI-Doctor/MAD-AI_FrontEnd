@@ -4,7 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import './DoctorSearchStyle.css';
 import { Link } from 'react-router';
 import { Config } from '../constant';
-import { searchDoctors } from '../api/features/doctorSearch';
+import { searchDoctors } from '../api/features';
 
 function DoctorSearch() {
   const [location, setLocation] = useState('');
